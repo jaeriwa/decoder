@@ -60,7 +60,8 @@
 			"w" : "<",
 			"x" : ">",
 			"y" : "?",
-			"z" : "/"
+			"z" : "/",
+			" " : " "
 		}
 
 
@@ -79,7 +80,7 @@
 			return decodedMessage;
 		}
 
-		document.getElementById("button").onclick = function() {
+		document.getElementById("message").onkeyup = function() {
 			var message = document.getElementById("message").value;
 			document.getElementById("answer").innerHTML = decodeMessage(message);
 		}
@@ -115,7 +116,6 @@
 	<textarea id="message">
 
 	</textarea>
-	<button id="button" type="submit">Click me!</button>
 	<div id="answer">
 
 	</div>
