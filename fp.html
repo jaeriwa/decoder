@@ -1,0 +1,125 @@
+<html>
+<head>
+	<title>Special Message Decoder</title>
+	<style>
+	body {
+		text-align: center;
+		margin: 50px 0px 0px;
+		padding: 0px;
+		font-size: 15px;
+		font-family: arial;
+	}
+	#container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 600px;
+	}
+	p {
+		text-align: left;
+	}
+	#message {
+		width: 500px;
+		height: 300px;
+		margin: 25px;
+		padding: 10px;
+	}
+	#button {
+		width: 140px;
+		border: 1px solid #000;
+	}
+	#answer {
+		margin: 25px;
+		text-align: left;
+	}
+	</style>
+	<script>
+	window.onload = function() {
+		var code = {
+			"a" : "!",
+			"b" : "@",
+			"c" : "#",
+			"d" : "$", 
+			"e" : "%",
+			"f" : ":",
+			"g" : "&",
+			"h" : "*",
+			"i" : "(",
+			"j" : "1",
+			"k" : "2",
+			"l" : "3",
+			"m" : "4",
+			"n" : "5",
+			"o" : "6",
+			"p" : "7",
+			"q" : "8",
+			"r" : "9",
+			"s" : "0",
+			"t" : ")",
+			"u" : "|",
+			"v" : "\\",
+			"w" : "<",
+			"x" : ">",
+			"y" : "?",
+			"z" : "/"
+		}
+
+
+		function decodeMessage(message) {
+
+			var messageArr = message.split(''),
+				decodedArr = messageArr.map(function(char) {
+					return code[char];
+				}),
+				decodedMessage = decodedArr.join('');
+
+			console.log('messageArr', messageArr);
+			console.log('decodedArr', decodedArr);
+			console.log('decodedMessage', decodedMessage);
+
+			return decodedMessage;
+		}
+
+		document.getElementById("button").onclick = function() {
+			var message = document.getElementById("message").value;
+			document.getElementById("answer").innerHTML = decodeMessage(message);
+		}
+
+		function decodeMessage(message) {
+
+			var messageArr = message.split(''),
+				decodedArr = messageArr.map(function(char) {
+					return code[char];
+				}),
+				decodedMessage = decodedArr.join('');
+
+			console.log('messageArr', messageArr);
+			console.log('decodedArr', decodedArr);
+			console.log('decodedMessage', decodedMessage);
+
+			return decodedMessage;
+		}
+
+		document.getElementById("button").onclick = function() {
+			var message = document.getElementById("message").value;
+			document.getElementById("answer").innerHTML = decodeMessage(message);
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="container">
+	<p>
+	Can't work out the secret code Will,Jo, Asher and Mila used on your Christmas message? Enter below...
+	</p>
+
+	<textarea id="message">
+
+	</textarea>
+	<button id="button" type="submit">Click me!</button>
+	<div id="answer">
+
+	</div>
+	</div>
+
+</body>
+</html>

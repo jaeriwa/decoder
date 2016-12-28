@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Special Message Decoder</title>
+	<style>
+	body {
+		text-align: center;
+		margin: 50px 0px 0px;
+		padding: 0px;
+		font-size: 15px;
+		font-family: arial;
+	}
+	#container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 600px;
+	}
+	p {
+		text-align: left;
+	}
+	#message {
+		width: 500px;
+		height: 300px;
+		margin: 25px;
+		padding: 10px;
+	}
+	#button {
+		width: 140px;
+		border: 1px solid #000;
+	}
+	#answer {
+		margin: 25px;
+		text-align: left;
+	}
+	</style>
+	<script>
+	window.onload = function() {
+		document.getElementById("button").onclick = function() {
+		var message = document.getElementById("message").value;
+		var answer = message.replace(/!/g, "a").replace(/@/g, "b").replace(/#/g, "c").replace(/\$/g, "d").replace(/%/g, "e").replace(/:/g, "f").replace(/&/g, "g").replace(/\*/g, "h").replace(/\(/g, "i").replace(/1/g, "j").replace(/2/g,"k").replace(/3/g, "l").replace(/4/g, "m").replace(/5/g, "n").replace(/6/g, "o").replace(/7/g, "p").replace(/8/g, "q").replace(/9/g, "r").replace(/0/g, "s").replace(/\)/g, "t").replace(/\|/g, "u").replace(/\\/g,"v").replace(/\</g, "w").replace(/\>/g, "x").replace(/\?/g, "y").replace(/\//g, "z");
+		document.getElementById("answer").innerHTML = answer;
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="container">
+	<p>
+	Can't work out the secret code Will,Jo, Asher and Mila used on your Christmas message? Enter below...
+	</p>
+
+	<textarea id="message">
+Type your message here...
+
+!@#$%:&*(1234567890)|\<>?/
+	</textarea>
+	<button id="button" type="submit">Click me!</button>
+	<div id="answer">
+
+	</div>
+	</div>
+
+</body>
+</html>

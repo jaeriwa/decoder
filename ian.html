@@ -1,0 +1,56 @@
+<html>
+<head>
+<script>
+window.onload = function() {
+
+// Create an object which associates each character in the code 
+// to the alphabetical value it represents
+var code = {
+   "0":"s",
+   "1":"j",
+   "2":"k",
+   "3":"l",
+   "4":"m",
+   "5":"n",
+   "6":"o",
+   "7":"p",
+   "8":"q",
+   "9":"r",
+   "!":"a",
+   "@":"b",
+   "#":"c",
+   "$":"d",
+   "%":"e",
+   ":":"f",
+   "&":"g",
+   "*":"h",
+   "(":"i",
+   ")":"t",
+   "|":"u",
+   "<":"v",
+   ">":"w",
+   "?":"x",
+   "/":"y",
+   "|": " " // I added a spacer
+};
+
+// Set up a message to decode
+var message = '*(|1!m4(%lioij;ofafwaf';
+
+function decodeMessage(message) {
+	// 1. Split the coded message string into an array
+  // 2. Map each coded character to correct alphabetical character using the mapping object we setup
+  // 3. Join the array again to convert it back to a string
+	return message.split('').map((character) => code[character]).join('');
+}
+
+// Output the decoded message
+console.log(decodeMessage(message));
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
