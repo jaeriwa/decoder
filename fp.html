@@ -17,7 +17,7 @@
 	p {
 		text-align: left;
 	}
-	#message {
+	textarea {
 		width: 500px;
 		height: 100px;
 		margin: 25px;
@@ -98,6 +98,10 @@
 			var message = document.getElementById("message").value;
 			document.getElementById("answer").innerHTML = encodeMessage(message);
 		}
+		document.getElementById("code").onkeyup = function() {
+			var message = document.getElementById("code").value;
+			document.getElementById("answer2").innerHTML = decodeMessage(message);
+		}
 
 		function encodeMessage(message) {
 
@@ -112,6 +116,16 @@
 			console.log('encodedMessage', encodedMessage); // joining the string back together
 
 			return encodedMessage;
+		}
+		function decodeMessage(message){
+
+			var messageArr = message.split(''), // split it into array
+				decodedArr = messageArr.map(function(char) { //map the array to the above key object
+					return key[char];
+				}),
+				decodedMessage = decodedArr.join(''); // make it back into a string
+
+				return decodedMessage;
 		}
 
 
@@ -131,6 +145,7 @@
 
 	</div>
 	<p>Make your own secret message using the same secret language by typing in your message below...
+	</p>
 	<textarea id="message">
 
 	</textarea>
