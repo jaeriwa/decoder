@@ -19,7 +19,7 @@
 	}
 	#message {
 		width: 500px;
-		height: 300px;
+		height: 100px;
 		margin: 25px;
 		padding: 10px;
 	}
@@ -64,20 +64,34 @@
 			" " : " "
 		}
 
-
-		function decodeMessage(message) {
-
-			var messageArr = message.split(''),
-				decodedArr = messageArr.map(function(char) {
-					return code[char];
-				}),
-				decodedMessage = decodedArr.join('');
-
-			console.log('messageArr', messageArr);
-			console.log('decodedArr', decodedArr);
-			console.log('decodedMessage', decodedMessage);
-
-			return decodedMessage;
+		var key = {
+			"!" : "a",
+			"@" : "b",
+			"#" : "c",
+			"$" : "d", 
+			"%" : "e",
+			":" : "f",
+			"&" : "g",
+			"*" : "h",
+			"(" : "i",
+			"1" : "j",
+			"2" : "k",
+			"3" : "l",
+			"4" : "m",
+			"5" : "n",
+			"6" : "o",
+			"7" : "p",
+			"8" : "q",
+			"9" : "r",
+			"0" : "s",
+			")" : "t",
+			"|" : "u",
+			"\\" : "v",
+			"<" : "w",
+			">" : "x",
+			"?" : "y",
+			"/" : "z",
+			" " : " "
 		}
 
 		document.getElementById("message").onkeyup = function() {
@@ -100,10 +114,6 @@
 			return decodedMessage;
 		}
 
-		document.getElementById("button").onclick = function() {
-			var message = document.getElementById("message").value;
-			document.getElementById("answer").innerHTML = decodeMessage(message);
-		}
 	}
 	</script>
 </head>
@@ -112,7 +122,13 @@
 	<p>
 	Can't work out the secret code Will,Jo, Asher and Mila used on your Christmas message? Enter below...
 	</p>
+	<textarea id="code">
+	
+	</textarea>
+	<div id="answer2">
 
+	</div>
+	<p>Make your own secret message using the same secret language by typing in your message below...
 	<textarea id="message">
 
 	</textarea>
