@@ -96,23 +96,25 @@
 
 		document.getElementById("message").onkeyup = function() {
 			var message = document.getElementById("message").value;
-			document.getElementById("answer").innerHTML = decodeMessage(message);
+			document.getElementById("answer").innerHTML = encodeMessage(message);
 		}
 
-		function decodeMessage(message) {
+		function encodeMessage(message) {
 
 			var messageArr = message.split(''),
-				decodedArr = messageArr.map(function(char) {
+				encodedArr = messageArr.map(function(char) {
 					return code[char];
 				}),
-				decodedMessage = decodedArr.join('');
+				encodedMessage = encodedArr.join('');
 
-			console.log('messageArr', messageArr);
-			console.log('decodedArr', decodedArr);
-			console.log('decodedMessage', decodedMessage);
+			console.log('messageArr', messageArr); // testing the array
+			console.log('encodedArr', encodedArr); // changing to the code
+			console.log('encodedMessage', encodedMessage); // joining the string back together
 
-			return decodedMessage;
+			return encodedMessage;
 		}
+
+
 
 	}
 	</script>
