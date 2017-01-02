@@ -96,40 +96,22 @@
 
 		document.getElementById("message").onkeyup = function() {
 			var message = document.getElementById("message").value;
-			document.getElementById("answer").innerHTML = encodeMessage(message);
+			document.getElementById("answer").innerHTML = decodeMessage(message, code);
 		}
 		document.getElementById("code").onkeyup = function() {
 			var message = document.getElementById("code").value;
-			document.getElementById("answer2").innerHTML = decodeMessage(message);
+			document.getElementById("answer2").innerHTML = decodeMessage(message, key);
 		}
 
-		function encodeMessage(message) {
-
-			var messageArr = message.split(''),
-				encodedArr = messageArr.map(function(char) {
-					return code[char];
-				}),
-				encodedMessage = encodedArr.join('');
-
-			console.log('messageArr', messageArr); // testing the array
-			console.log('encodedArr', encodedArr); // changing to the code
-			console.log('encodedMessage', encodedMessage); // joining the string back together
-
-			return encodedMessage;
-		}
-		function decodeMessage(message){
-
+		function decodeMessage(message, obj){
 			var messageArr = message.split(''), // split it into array
-				decodedArr = messageArr.map(function(char) { //map the array to the above key object
-					return key[char];
+				decodedArr = messageArr.map(function(char) { //map the array to one of the above key objects
+					return obj[char];
 				}),
 				decodedMessage = decodedArr.join(''); // make it back into a string
 
 				return decodedMessage;
 		}
-
-
-
 	}
 	</script>
 </head>
